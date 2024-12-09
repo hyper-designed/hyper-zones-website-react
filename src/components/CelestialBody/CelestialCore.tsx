@@ -1,4 +1,4 @@
-import { motion, MotionValue } from 'framer-motion';
+import { motion, MotionValue } from "framer-motion";
 
 interface CelestialCoreProps {
   celestialColor: MotionValue<string>;

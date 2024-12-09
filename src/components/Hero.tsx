@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Clock } from './icons';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Clock } from "./icons";
 
 export function Hero() {
   return (

@@ -1,8 +1,8 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Clock } from '../icons';
-import { useHeaderAnimation } from './useHeaderAnimation';
-import { NavigationLinks } from './NavigationLinks';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Clock } from "../icons";
+import { useHeaderAnimation } from "./useHeaderAnimation";
+import { NavigationLinks } from "./NavigationLinks";
 
 export function Header() {
   const { isVisible, headerStyles } = useHeaderAnimation();
@@ -14,9 +14,9 @@ export function Header() {
       animate={isVisible ? "visible" : "hidden"}
       variants={{
         visible: { y: 0 },
-        hidden: { y: '-100%' },
+        hidden: { y: "-100%" },
       }}
-      transition={{ duration: 0.2, ease: 'easeInOut' }}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
       style={headerStyles}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,5 +1,5 @@
-import { platforms } from './platformData';
-import { PlatformCard } from './PlatformCard';
+import { platforms } from "./platformData";
+import { PlatformCard } from "./PlatformCard";
 
 export default function DownloadPage() {
   return (

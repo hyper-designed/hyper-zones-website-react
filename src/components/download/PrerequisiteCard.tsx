@@ -1,5 +1,5 @@
-import { SoftwarePrerequisite } from '../../types/download';
-import { HyperSurfaceCard } from '../ui/HyperSurfaceCard';
+import { SoftwarePrerequisite } from "../../types/download";
+import { HyperSurfaceCard } from "../ui/HyperSurfaceCard";
 
 interface PrerequisiteCardProps {
   prerequisite: SoftwarePrerequisite;
@@ -8,8 +8,12 @@ interface PrerequisiteCardProps {
 export function PrerequisiteCard({ prerequisite }: PrerequisiteCardProps) {
   return (
     <HyperSurfaceCard className="p-4">
-      <h3 className="text-sm font-medium text-white mb-2">{prerequisite.label}</h3>
-      <p className="text-white/60 text-sm mb-4 whitespace-pre-line">{prerequisite.description}</p>
+      <h3 className="text-sm font-medium text-white mb-2">
+        {prerequisite.label}
+      </h3>
+      <p className="text-white/60 text-sm mb-4 whitespace-pre-line">
+        {prerequisite.description}
+      </p>
       <div className="space-y-2">
         {prerequisite.items.map((item, index) => (
           <a

@@ -1,7 +1,7 @@
-import { Dialog } from '@headlessui/react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { SoftwarePrerequisite } from '../../types/download';
-import { Launch, X } from '../icons';
+import { Dialog } from "@headlessui/react";
+import { AnimatePresence, motion } from "framer-motion";
+import { SoftwarePrerequisite } from "../../types/download";
+import { Launch, X } from "../icons";
 
 interface PrerequisiteDialogProps {
   prerequisite: SoftwarePrerequisite;
@@ -9,7 +9,11 @@ interface PrerequisiteDialogProps {
   onClose: () => void;
 }
 
-export function PrerequisiteDialog({ prerequisite, isOpen, onClose }: PrerequisiteDialogProps) {
+export function PrerequisiteDialog({
+  prerequisite,
+  isOpen,
+  onClose,
+}: PrerequisiteDialogProps) {
   return (
     <AnimatePresence>
       {isOpen && (

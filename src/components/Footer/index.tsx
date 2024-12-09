@@ -1,8 +1,8 @@
-import { Clock } from '../icons';
-import { HyperCard } from '../ui/HyperCard';
-import { FooterNav } from './FooterNav';
-import { SocialLinks } from './SocialLinks';
-import { ContactInfo } from './ContactInfo';
+import { Clock } from "../icons";
+import { HyperCard } from "../ui/HyperCard";
+import { FooterNav } from "./FooterNav";
+import { SocialLinks } from "./SocialLinks";
+import { ContactInfo } from "./ContactInfo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,8 @@ export function Footer() {
               <span className="text-2xl font-bold text-white">HyperZones</span>
             </div>
             <p className="text-sm text-white/80">
-              Know when, wherever. The ultimate time zone management tool for global teams.
+              Know when, wherever. The ultimate time zone management tool for
+              global teams.
             </p>
             <SocialLinks />
           </div>

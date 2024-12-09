@@ -1,4 +1,4 @@
-import { padding, margin, gap } from './spacing';
+import { gap, margin, padding } from "./spacing";
 
 export const sectionSpacing = {
   desktop: {
@@ -12,8 +12,8 @@ export const sectionSpacing = {
 };
 
 export const containerStyles = {
-  maxWidth: 'max-w-7xl',
-  center: 'mx-auto',
+  maxWidth: "max-w-7xl",
+  center: "mx-auto",
   padding: padding.card.outer,
 };
 

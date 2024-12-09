@@ -1,14 +1,17 @@
-import { motion } from 'framer-motion';
-import { Platform } from '../../types/download';
-import { HyperCard } from '../ui/HyperCard';
-import { PlatformCard } from './PlatformCard';
+import { motion } from "framer-motion";
+import { Platform } from "../../types/download";
+import { HyperCard } from "../ui/HyperCard";
+import { PlatformCard } from "./PlatformCard";
 
 interface OtherPlatformsProps {
   platforms: Platform[];
   currentPlatform: Platform;
 }
 
-export function OtherPlatforms({ platforms, currentPlatform }: OtherPlatformsProps) {
+export function OtherPlatforms({
+  platforms,
+  currentPlatform,
+}: OtherPlatformsProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -22,22 +25,23 @@ export function OtherPlatforms({ platforms, currentPlatform }: OtherPlatformsPro
             Download for other platforms
           </h2>
           <p className="text-white/70 text-sm">
-            HyperZones is available for a variety of platforms. Choose the one that suits you best.
+            HyperZones is available for a variety of platforms. Choose the one
+            that suits you best.
           </p>
         </div>
-        
+
         <div className="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {platforms
-            .filter(p => p.label !== currentPlatform.label)
+            .filter((p) => p.label !== currentPlatform.label)
             .map((platform, index) => (
               <motion.div
                 key={platform.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.35, 
-                  delay: 0.8 + index * 0.05, 
-                  ease: [0.165, 0.84, 0.44, 1] 
+                transition={{
+                  duration: 0.35,
+                  delay: 0.8 + index * 0.05,
+                  ease: [0.165, 0.84, 0.44, 1],
                 }}
               >
                 <PlatformCard platform={platform} />

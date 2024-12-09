@@ -1,27 +1,28 @@
-import { motion } from 'framer-motion';
-import { Clock, Users, Globe, Shield } from 'lucide-react';
-import { HyperCard } from '../components/ui/HyperCard';
+import { motion } from "framer-motion";
+import { Clock, Globe, Shield, Users } from "lucide-react";
+import { HyperCard } from "../components/ui/HyperCard";
 
 const values = [
   {
     icon: Clock,
-    title: 'Time-Focused',
-    description: 'We believe in making time management effortless and intuitive.',
+    title: "Time-Focused",
+    description:
+      "We believe in making time management effortless and intuitive.",
   },
   {
     icon: Users,
-    title: 'User-Centric',
-    description: 'Every feature is designed with our users in mind.',
+    title: "User-Centric",
+    description: "Every feature is designed with our users in mind.",
   },
   {
     icon: Globe,
-    title: 'Global First',
-    description: 'Built for a world where work knows no boundaries.',
+    title: "Global First",
+    description: "Built for a world where work knows no boundaries.",
   },
   {
     icon: Shield,
-    title: 'Privacy-Focused',
-    description: 'Your data is yours. We take privacy seriously.',
+    title: "Privacy-Focused",
+    description: "Your data is yours. We take privacy seriously.",
   },
 ];
 
@@ -62,9 +63,9 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
           <div className="space-y-4 text-white/80">
             <p>
-              HyperZones was born from a simple observation: as the world becomes
-              more connected, managing time across different zones becomes
-              increasingly complex.
+              HyperZones was born from a simple observation: as the world
+              becomes more connected, managing time across different zones
+              becomes increasingly complex.
             </p>
             <p>
               We set out to create a tool that would make this challenge

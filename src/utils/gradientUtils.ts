@@ -1,5 +1,11 @@
-import { Color } from './types';
-import { dayColors, nightColors, sunriseColors, sunsetColors, timeConstants } from './skyColors';
+import { Color } from "./types";
+import {
+  dayColors,
+  nightColors,
+  sunriseColors,
+  sunsetColors,
+  timeConstants,
+} from "./skyColors";
 
 export function lerpColor(start: Color, end: Color, t: number): Color {
   return {

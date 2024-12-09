@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import { Platform } from './types';
-import { HyperCard } from '../../components/ui/HyperCard';
-import { HyperSurfaceCard } from '../../components/ui/HyperSurfaceCard';
+import { motion } from "framer-motion";
+import { Platform } from "./types";
+import { HyperCard } from "../../components/ui/HyperCard";
+import { HyperSurfaceCard } from "../../components/ui/HyperSurfaceCard";
 
 interface PlatformCardProps {
   platform: Platform;
@@ -23,10 +23,12 @@ export function PlatformCard({ platform }: PlatformCardProps) {
               <p className="text-white/60">{platform.description}</p>
             </div>
           </div>
-          
+
           <div className="flex-grow">
             <div className="mb-6">
-              <h3 className="text-sm font-medium text-white/80 mb-2">Requirements</h3>
+              <h3 className="text-sm font-medium text-white/80 mb-2">
+                Requirements
+              </h3>
               <p className="text-white/60">{platform.requirements}</p>
             </div>
 
@@ -34,8 +36,12 @@ export function PlatformCard({ platform }: PlatformCardProps) {
               <div className="mb-6">
                 {platform.prerequisites.map((prereq, index) => (
                   <HyperSurfaceCard key={index} className="p-4">
-                    <h3 className="text-sm font-medium text-white mb-2">{prereq.name}</h3>
-                    <p className="text-white/60 text-sm mb-4">{prereq.description}</p>
+                    <h3 className="text-sm font-medium text-white mb-2">
+                      {prereq.name}
+                    </h3>
+                    <p className="text-white/60 text-sm mb-4">
+                      {prereq.description}
+                    </p>
                     <div className="space-y-2">
                       {prereq.options.map((option, optIndex) => (
                         <a
@@ -56,7 +62,9 @@ export function PlatformCard({ platform }: PlatformCardProps) {
           </div>
 
           <div className="mt-auto">
-            <p className="text-sm text-white/40 mb-4">Version {platform.version}</p>
+            <p className="text-sm text-white/40 mb-4">
+              Version {platform.version}
+            </p>
             <a
               href={platform.downloadUrl}
               target="_blank"

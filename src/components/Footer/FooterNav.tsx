@@ -1,15 +1,15 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 
 const navigationLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/pricing', label: 'Pricing' },
-  { to: '/download', label: 'Download' },
-  { to: '/about', label: 'About' },
+  { to: "/", label: "Home" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/download", label: "Download" },
+  { to: "/about", label: "About" },
 ] as const;
 
 const legalLinks = [
-  { to: '/privacy-policy', label: 'Privacy Policy' },
-  { to: '/terms-and-conditions', label: 'Terms & Conditions' },
+  { to: "/privacy-policy", label: "Privacy Policy" },
+  { to: "/terms-and-conditions", label: "Terms & Conditions" },
 ] as const;
 
 export function FooterNav() {
@@ -26,8 +26,8 @@ export function FooterNav() {
                 to={to}
                 className={`text-sm transition-colors ${
                   location.pathname === to
-                    ? 'text-[#FF9544]'
-                    : 'text-white/60 hover:text-white'
+                    ? "text-[#FF9544]"
+                    : "text-white/60 hover:text-white"
                 }`}
               >
                 {label}
@@ -45,8 +45,8 @@ export function FooterNav() {
                 to={to}
                 className={`text-sm transition-colors ${
                   location.pathname === to
-                    ? 'text-[#FF9544]'
-                    : 'text-white/60 hover:text-white'
+                    ? "text-[#FF9544]"
+                    : "text-white/60 hover:text-white"
                 }`}
               >
                 {label}

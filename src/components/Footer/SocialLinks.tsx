@@ -1,9 +1,13 @@
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { icon: Twitter, href: 'https://twitter.com/hyperzones', label: 'Twitter' },
-  { icon: Github, href: 'https://github.com/hyperzones', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/hyperzones', label: 'LinkedIn' },
+  { icon: Twitter, href: "https://twitter.com/hyperzones", label: "Twitter" },
+  { icon: Github, href: "https://github.com/hyperzones", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/company/hyperzones",
+    label: "LinkedIn",
+  },
 ] as const;
 
 export function SocialLinks() {

@@ -1,36 +1,36 @@
-import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
-import { HyperCard } from '../components/ui/HyperCard';
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import { HyperCard } from "../components/ui/HyperCard";
 
 const tiers = [
   {
-    name: 'Free',
-    price: '$0',
-    description: 'Perfect for individual users',
+    name: "Free",
+    price: "$0",
+    description: "Perfect for individual users",
     features: [
-      'Up to 3 time zones',
-      'Basic time conversion',
-      'Offline access',
-      'Dark mode',
+      "Up to 3 time zones",
+      "Basic time conversion",
+      "Offline access",
+      "Dark mode",
     ],
-    cta: 'Get Started',
+    cta: "Get Started",
     highlighted: false,
   },
   {
-    name: 'Pro',
-    price: '$5/mo',
-    description: 'For power users and teams',
+    name: "Pro",
+    price: "$5/mo",
+    description: "For power users and teams",
     features: [
-      'Unlimited time zones',
-      'Team sharing & collaboration',
-      'Custom labels & groups',
-      'Priority support',
-      'Advanced analytics',
-      'API access',
-      'Custom themes',
-      'Early access to new features',
+      "Unlimited time zones",
+      "Team sharing & collaboration",
+      "Custom labels & groups",
+      "Priority support",
+      "Advanced analytics",
+      "API access",
+      "Custom themes",
+      "Early access to new features",
     ],
-    cta: 'Start Free Trial',
+    cta: "Start Free Trial",
     highlighted: true,
   },
 ];
@@ -58,7 +58,7 @@ export default function PricingPage() {
             >
               <HyperCard
                 className={`h-full ${
-                  tier.highlighted ? 'border-2 border-[#FF9544]' : ''
+                  tier.highlighted ? "border-2 border-[#FF9544]" : ""
                 }`}
               >
                 <div className="flex flex-col h-full">
@@ -70,7 +70,7 @@ export default function PricingPage() {
                       <span className="text-4xl font-bold tracking-tight">
                         {tier.price}
                       </span>
-                      {tier.price !== '$0' && (
+                      {tier.price !== "$0" && (
                         <span className="text-white/60 ml-1">/month</span>
                       )}
                     </div>
@@ -89,8 +89,8 @@ export default function PricingPage() {
                   <button
                     className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
                       tier.highlighted
-                        ? 'bg-[#FF9544] text-white hover:bg-[#FF9544]/90'
-                        : 'bg-white/10 text-white hover:bg-white/20'
+                        ? "bg-[#FF9544] text-white hover:bg-[#FF9544]/90"
+                        : "bg-white/10 text-white hover:bg-white/20"
                     }`}
                   >
                     {tier.cta}

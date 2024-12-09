@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-import { padding, margin } from '../../utils/spacing';
+import { motion } from "framer-motion";
+import React from "react";
+import { margin, padding } from "../../utils/spacing";
 
 interface HyperCardProps {
   children: React.ReactNode;
   width?: string | number;
   height?: string | number;
-  alignment?: 'start' | 'center' | 'end';
+  alignment?: "start" | "center" | "end";
   className?: string;
   noPadding?: boolean;
   noMargin?: boolean;
@@ -14,10 +14,10 @@ interface HyperCardProps {
 
 export function HyperCard({
   children,
-  width = 'auto',
-  height = 'auto',
-  alignment = 'start',
-  className = '',
+  width = "auto",
+  height = "auto",
+  alignment = "start",
+  className = "",
   noPadding = false,
   noMargin = false,
 }: HyperCardProps) {
@@ -30,8 +30,8 @@ export function HyperCard({
       className={`
         bg-[#121212] 
         rounded-3xl 
-        ${!noPadding ? padding.card.outer : ''} 
-        ${!noMargin ? margin.component.bottom : ''} 
+        ${!noPadding ? padding.card.outer : ""} 
+        ${!noMargin ? margin.component.bottom : ""} 
         ${className}
       `}
       style={{

@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-import { padding, margin } from '../../utils/spacing';
+import { motion } from "framer-motion";
+import React from "react";
+import { margin, padding } from "../../utils/spacing";
 
 interface HyperSurfaceCardProps {
   children: React.ReactNode;
   width?: string | number;
   height?: string | number;
-  alignment?: 'start' | 'center' | 'end';
+  alignment?: "start" | "center" | "end";
   className?: string;
   onClick?: () => void;
   noPadding?: boolean;
@@ -15,10 +15,10 @@ interface HyperSurfaceCardProps {
 
 export function HyperSurfaceCard({
   children,
-  width = '100%',
-  height = 'auto',
-  alignment = 'start',
-  className = '',
+  width = "100%",
+  height = "auto",
+  alignment = "start",
+  className = "",
   onClick,
   noPadding = false,
   noMargin = false,
@@ -33,16 +33,16 @@ export function HyperSurfaceCard({
       className={`
         bg-[#1a1a1a] 
         rounded-2xl 
-        ${!noPadding ? padding.card.inner : ''} 
-        ${!noMargin ? margin.component.bottom : ''} 
+        ${!noPadding ? padding.card.inner : ""} 
+        ${!noMargin ? margin.component.bottom : ""} 
         ${className}
       `}
       style={{
         width,
         height,
         alignItems: alignment,
-        display: 'flex',
-        flexDirection: 'column',
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       {children}

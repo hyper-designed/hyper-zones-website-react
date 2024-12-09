@@ -1,6 +1,6 @@
-import { ChevronDown } from '../icons';
-import { HyperSurfaceCard } from '../ui/HyperSurfaceCard';
-import { padding } from '../../utils/spacing';
+import { ChevronDown } from "../icons";
+import { HyperSurfaceCard } from "../ui/HyperSurfaceCard";
+import { padding } from "../../utils/spacing";
 
 interface FAQItemProps {
   question: string;
@@ -13,7 +13,7 @@ export function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
   return (
     <HyperSurfaceCard
       className={`transition-colors duration-300 cursor-pointer min-h-[44px] ${
-        isOpen ? 'bg-[#222222]' : 'hover:bg-[#1d1d1d]'
+        isOpen ? "bg-[#222222]" : "hover:bg-[#1d1d1d]"
       }`}
       onClick={onClick}
       noPadding
@@ -23,7 +23,7 @@ export function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
           <span className="font-medium text-white">{question}</span>
           <ChevronDown
             className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
-              isOpen ? 'transform rotate-180' : ''
+              isOpen ? "transform rotate-180" : ""
             }`}
           />
         </div>

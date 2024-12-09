@@ -1,78 +1,47 @@
-import {motion, useTransform, MotionValue} from 'framer-motion';
+import { motion, MotionValue, useTransform } from "framer-motion";
 
 interface CelestialBodyProps {
-    y: MotionValue<string>;
-    scale: MotionValue<number>;
-    progress: MotionValue<number>;
+  progress: MotionValue<number>;
 }
 
-export function CelestialBody({y, scale, progress}: CelestialBodyProps) {
-    const celestialColor = useTransform(
-        progress,
-        [0, 0.5, 1],
-        ['#fffeb0', '#FF9544', '#FFFFFF']
-    );
+export function CelestialBody({ progress }: CelestialBodyProps) {
+  const y = useTransform(
+    progress,
+    [0, 0.5, 1],
+    ["calc(100vh - 75vw)", "50vh", "100vh"],
+  );
 
-    const glowOpacity = useTransform(
-        progress,
-        [0, 0.5, 1],
-        [0.6, 0.4, 0.3]  // Stronger glow for sun, softer for moon
-    );
+  const width = useTransform(progress, [0, 0.5, 1], ["75vw", "20vw", "30vw"]);
 
-    const glowSize = useTransform(
-        progress,
-        [0, 0.5, 1],
-        [3, 2.5, 2]  // Larger glow for sun, smaller for moon
-    );
+  const celestialColor = useTransform(
+    progress,
+    [0, 0.5, 1],
+    ["#fffeb0", "#FF9544", "#FFFFFF"],
+  );
 
-    return (
-        <motion.div
-            className="fixed inset-0 flex items-center justify-center pointer-events-none"
-            style={{y, scale}}
-        >
-            <div className="relative w-[40vw] aspect-square">
-                {/* Outer Glow */}
-                <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                        scale: glowSize,
-                        background: `radial-gradient(circle at center, ${celestialColor.get()}80 0%, transparent 70%)`,
-                        filter: 'blur(60px)',
-                        opacity: glowOpacity,
-                    }}
-                />
+  const boxShadowColor = useTransform(
+    progress,
+    [0, 0.5, 1],
+    ["#fffeb0", "#FF9544", "#FFFFFF"],
+  );
 
-                {/* Middle Glow */}
-                <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                        scale: useTransform(glowSize, s => s * 0.75),
-                        background: `radial-gradient(circle at center, ${celestialColor.get()}99 0%, transparent 70%)`,
-                        filter: 'blur(40px)',
-                        opacity: useTransform(glowOpacity, o => o * 1.2),
-                    }}
-                />
+  const boxShadow = useTransform(boxShadowColor, (color) => {
+    return `${color} 0 0 60px 20px`;
+  });
 
-                {/* Inner Glow */}
-                <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                        scale: useTransform(glowSize, s => s * 0.5),
-                        background: `radial-gradient(circle at center, ${celestialColor.get()}cc 0%, transparent 70%)`,
-                        filter: 'blur(20px)',
-                        opacity: useTransform(glowOpacity, o => o * 1.4),
-                    }}
-                />
-
-                {/* Core */}
-                <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                        backgroundColor: celestialColor,
-                        boxShadow: `0 0 100px ${celestialColor.get()}66`,
-                    }}
-                />
-            </div>
-        </motion.div>
-    );
+  return (
+    <motion.div
+      className="fixed inset-0 flex items-center justify-center pointer-events-none"
+      style={{ y }}
+    >
+      <motion.div
+        className="relative aspect-square rounded-full"
+        style={{
+          width: width,
+          backgroundColor: celestialColor,
+          boxShadow: boxShadow,
+        }}
+      />
+    </motion.div>
+  );
 }

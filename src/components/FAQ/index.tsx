@@ -1,21 +1,23 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useState } from 'react';
-import { HyperCard } from '../ui/HyperCard';
-import { FAQItem } from './FAQItem';
-import { faqData } from './faqData';
-import { sectionSpacing, containerStyles } from '../../utils/layoutStyles';
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useState } from "react";
+import { HyperCard } from "../ui/HyperCard";
+import { FAQItem } from "./FAQItem";
+import { faqData } from "./faqData";
+import { containerStyles } from "../../utils/layoutStyles";
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   return (
     <section className="py-4 px-4" ref={ref}>
-      <HyperCard className={`${containerStyles.maxWidth} ${containerStyles.center}`}>
+      <HyperCard
+        className={`${containerStyles.maxWidth} ${containerStyles.center}`}
+      >
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

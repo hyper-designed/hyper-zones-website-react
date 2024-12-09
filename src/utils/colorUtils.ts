@@ -1,4 +1,9 @@
-export function rgbToString(r: number, g: number, b: number, a: number = 1): string {
+export function rgbToString(
+  r: number,
+  g: number,
+  b: number,
+  a: number = 1,
+): string {
   return a === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
@@ -9,23 +14,32 @@ export function hexToRgba(hex: string, alpha: number = 1): string {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-export function createGlowGradient(color: string | { r: number; g: number; b: number }, stopPercentage: number = 100): string {
+export function createGlowGradient(
+  color:
+    | string
+    | {
+        r: number;
+        g: number;
+        b: number;
+      },
+  stopPercentage: number = 100,
+): string {
   let colorStart: string;
   let colorEnd: string;
 
-  if (typeof color === 'object') {
+  if (typeof color === "object") {
     const { r, g, b } = color;
     colorStart = `rgba(${r}, ${g}, ${b}, 0.8)`;
     colorEnd = `rgba(${r}, ${g}, ${b}, 0)`;
   } else {
     // Handle hex colors
-    if (color.startsWith('#')) {
+    if (color.startsWith("#")) {
       colorStart = hexToRgba(color, 0.8);
       colorEnd = hexToRgba(color, 0);
     } else {
       // Default to yellow-white for the sun
-      colorStart = 'rgba(255, 255, 0, 0.8)';
-      colorEnd = 'rgba(255, 255, 255, 0)';
+      colorStart = "rgba(255, 255, 0, 0.8)";
+      colorEnd = "rgba(255, 255, 255, 0)";
     }
   }
 
